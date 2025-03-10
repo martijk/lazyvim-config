@@ -9,6 +9,6 @@
 
 -- command to delete trailing whitespace
 local function trim_ws()
-  vim.api.nvim_exec("%s/\\s\\+$//e", false)
+  vim.api.nvim_exec2("%s/\\s\\+$//e", {})
 end
 vim.api.nvim_create_user_command('Trimws', trim_ws, {})
