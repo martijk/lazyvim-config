@@ -6,3 +6,9 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- command to delete trailing whitespace
+local function trim_ws()
+  vim.api.nvim_exec("%s/\\s\\+$//e", false)
+end
+vim.api.nvim_create_user_command('Trimws', trim_ws, {})
